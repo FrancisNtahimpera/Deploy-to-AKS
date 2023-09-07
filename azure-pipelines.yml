@@ -54,7 +54,7 @@ stages:
         namespace: 'default'
         secretType: 'dockerRegistry'
         secretName: '$(acrsecret)'
-        dockerRegistryEndpoint: 'AZDEvAkssRegistery'
+        dockerRegistryEndpoint: 'AZDEvAkssServiceConnexion'
     - task: KubernetesManifest@1
       inputs:
         action: 'deploy'
