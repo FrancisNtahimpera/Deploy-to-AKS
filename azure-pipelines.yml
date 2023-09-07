@@ -20,7 +20,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'AZDEvAkssSConnexionRegistery'
+        containerRegistry: 'AZDEvAkssRegistery'
         repository: '$(imageRepo)'
         command: 'buildAndPush' 
         Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
@@ -29,8 +29,8 @@ stages:
           latest
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)/s/kubrnetes'
-        artifact: 'manifest'
+        targetPath: '$(Pipeline.Workspace)/s/kubernetes'
+        artifact: 'manifests'
         publishLocation: 'pipeline'
 - stage: Deploy
   displayName: Deploy to Dev
